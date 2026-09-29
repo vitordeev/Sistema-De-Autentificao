@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Autentificação</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'accounts/css/estilo.css' %}">
+    <title>Recupercão de Senha</title>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="imgs/logo (2).png" width="170" height="170" alt="Victor Projetos">
+        </a>
+        <h1>Projeto de Autentificação</h1>
+    </header>
+    <main>
+        <form class = "card-recuperar" action="" method="post">
+            {% csrf_token %}
+        <div class="Titulo Card">
+            <h1>Recuperação de Senha</h1>
+        </div>
+        <div class="campoEmailRP">
+            <label for="email">Email de Usuario</label>
+            <input type="email" name="email" id="emailRP" placeholder="Digite seu Email">
+        </div>
+         <button type="button">Enviar código</button>
+        <p class="mensagem-codigo">
+    Enviamos um código de verificação para o seu email. Confira sua caixa de entrada (e o spam) e digite o código abaixo.
+</p>
+        <div class="campoSenhaRP">
+            <label for="senha" >Codigo Enviado</label>
+            <input type="password" name="senha" id="senha"placeholder= "Digite o Codigo Enviado">
+        </div>
+        <div>
+            <button  type="submit">Vericar</button>
+        </div>
+        <p class="logar">
+            <a href="index.html">Login</a>
+        </p>
+        </form>
+    </main>
+</body>
+</html>
