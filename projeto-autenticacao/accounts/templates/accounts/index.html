@@ -13,32 +13,36 @@
 </head>
 <body>
         <header>
-            <a href="index.html">
-            <img src="Logo (2).png" width="170" height="170" alt="Victor Projetos">
-            </a>
-            <h1>Projeto de Autentificação</h1>
+             <h1 class="titulo-header">Projeto de Autentificação</h1>
     </header>
     <main>
         <form class = "card-login" action="" method="post">
             {% csrf_token %}
+           <div class="mensagens">
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="{{ message.tags }}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        <div>
         <div class="Titulo Card">
             <h1>Login</h1>
         </div>
         <div class="campoEmail">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="Digite seu Email">
+            <input type="email" name="email" id="email" placeholder="Digite seu Email" required>
         </div>
         <div class="campoSenha">
             <label for="senha" >Senha</label>
-            <input type="password" name="senha" id="senha"placeholder= "Digite sua Senha">
+            <input type="password" name="senha" id="senha"placeholder= "Digite sua Senha" required>
             <button  type="submit">Logar</button>
         <div class="RP-Senha">
-            <p>Caso tenha esquecido sua senha <a href="recuperarSenha.html">Clique aqui</a></p>
+            <p>Caso tenha esquecido sua senha <a href="{% url 'rpsenha' %}?novo=1">Clique aqui</a></p>
         </div>
         </div>
         </form>
         <p class="criar-conta">
-            <a href="castrato.html">Criar conta</a>
+            <a href="{% url 'cadastro' %}">Criar conta</a>
         </p>
     </main>
     

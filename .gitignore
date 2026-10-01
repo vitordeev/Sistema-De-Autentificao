@@ -1,1 +1,5 @@
-pages/imgs/Logo (2).png
+venv/
+__pycache__/
+*.pyc
+db.sqlite3
+.vscode/

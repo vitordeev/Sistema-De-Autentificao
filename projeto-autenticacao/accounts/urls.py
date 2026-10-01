@@ -5,8 +5,10 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', views.login),
-    path('cadastro/', views.cadastro),
-    path('novaSenha/', views.novaSenha),
-    path('recuperar-Senha/' , views.recuperarSenha)
+    path('login/', views.login , name = "login"),
+    path('cadastro/', views.cadastro , name = "cadastro"),
+    path('novaSenha/', views.novasenha, name = "novasenha"),
+    path('recuperar_senha/' , views.recuperarSenha, name = "rpsenha"),
+    path('home/', views.home, name='home' ),
+    path("sair/", views.sair, name="sair"),
 ]

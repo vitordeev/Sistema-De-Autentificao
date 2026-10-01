@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Home | Meu Projeto</title>
+
+    <link rel="stylesheet" href="{% static 'accounts/css/estilo.css' %}">
+</head>
+
+<body>
+    <header>
+             <h1 class="titulo-header">Projeto de Autentificação</h1>
+    </header>
+
+
+    <main class="home-container">
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="welcome">BEM-VINDO 👋</span>
+
+                <h2>
+                    Olá, <strong>usuário!</strong>
+                </h2>
+
+                <p>
+                    Você está logado com sucesso.
+                    Essa é a área principal da sua aplicação.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#" class="btn-primary">Meu perfil</a>
+                    <a href="#" class="btn-secondary">Explorar</a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-card">
+
+            <div class="icon">✓</div>
+                <h3>Login realizado</h3>
+                <p>Sua sessão está ativa e você pode acessar a aplicação.</p>
+             </div>
+    </main>
+
+</body>
+</html>

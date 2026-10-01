@@ -12,14 +12,18 @@
 </head>
 <body>
     <header>
-            <a href="index.html">
-            <img src="imgs/logo (2).png" width="170" height="170" alt="Victor Projetos">
-            </a>
-            <h1>Projeto de Autentificação</h1>
+             <h1 class="titulo-header">Projeto de Autentificação</h1>
     </header>
     <main>
         <form action="" class="card-cadastro"  method="post">
             {% csrf_token %}
+        <div class="mensagens">
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="{{ message.tags }}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        <div>
             <h1 class = "h1-criar-conta">Cadastra-se</h1>  
             <div class="campoCaEmail">
                 <label for="CadastroEmail">Cadastrar Email</label>
@@ -27,31 +31,31 @@
             </div>
             <div class="CampoCaSenha">
                 <label for="Cadastro-Senha">Criar Senha</label>
-                <input type="password" id="Cadastro-Senha" name="CadastroSenha" placeholder="Digite sua senha">            
+                <input type="password" id="Cadastro-Senha" name="CadastroSenha" placeholder="Digite sua senha" required>            
             </div>
             <div class="CampoRepetirSenha">
                 <label for="Repetir-Senha">Confirmar Senha</label>
-                <input type="password" id="Repetir-Senha" name="Repetir-Senha"placeholder="Confirme sua senha">
+                <input type="password" id="Repetir-Senha" name="Repetir-Senha"placeholder="Confirme sua senha" required>
             </div>
             <div class="CampoTelefone">
                 <label for="Cadastro-Telefone">Telefone</label>
-                <input type="tel" id="Cadastro-Telefone" name="Cadastro-Telefone" placeholder="Digite seu telefone">
+                <input type="tel" id="Cadastro-Telefone" name="Cadastro-Telefone" placeholder="Digite seu telefone"required>
             </div>
             <div class="CampoCep">
             <label for="Cep">CEP</label>
-            <input type="number" id ="cep" name="cep"placeholder="Digite seu cep">
+            <input type="number" id ="cep" name="cep"placeholder="Digite seu cep" required>
             </div>
             <div class="CampoRua">
             <label for="Rua">Rua</label>
-            <input type="text"id="Rua"name="Rua">
+            <input type="text"id="Rua"name="rua" required>
             </div>
             <div class="casa-Numero">
                 <label for="casa">Numero</label>
-                <input type="text" id="casa" name="casa">
+                <input type="text" id="casa" name="casa" required>
             </div>
             <button>Cadastrar</button>
             <div class="ja tenho conta">
-                <p class="JatenhoConta"><a href="index.html">Ja tenho conta</a></p>
+                <p class="JatenhoConta"><a href="{% url 'login' %}">Ja tenho conta</a></p>
             </div>
         </form>
 </main>
