@@ -123,6 +123,7 @@ def recuperarSenha(resquest):
             
             codigo = random.randint(100000, 999999)
             resquest.session["email-recuperacao"] = email
+            print(f"Esse e o email que vai para a recuperacao {email}")
             resquest.session["codigo-recuperacao"] = str(codigo)
             messages.success(resquest, "Codigo enviado com sucesso")
             send_mail(
@@ -138,6 +139,10 @@ def recuperarSenha(resquest):
             print(codigo_digitado)
             print(codigo_salvo)
 
+            print("EMAIL NA VERIFICAÇÃO:", resquest.session.get("email-recuperacao"))
+            print("CÓDIGO SALVO:", codigo_salvo)
+            print("CÓDIGO DIGITADO:", codigo_digitado)  
+
             if codigo_salvo == codigo_digitado:
                 messages.success(resquest, "Os codigo informado esta correto")
                 return redirect("novasenha")
@@ -148,30 +153,40 @@ def recuperarSenha(resquest):
     return render(
         resquest,
         "accounts/recuperarSenha.html",
-        {"email": ''}
+        {"email": email}
     )
 
 def novasenha(request):
 
+    print("ENTROU NA VIEW NOVA SENHA")
+    print("MÉTODO:", request.method)
+
     if request.method == "POST":
-        
 
         email = request.session.get("email-recuperacao")
-
+        print("O email dessa sessão e: " , {email})
         senha = request.POST.get("novasenha")
         senha_confirmada = request.POST.get("Cnovasenha")
 
-        usuario = User.objects.get(email=email)
+        if not email:
+            messages.error(request, "Sessão de recuperação não encontrada.")
+            return redirect("rpsenha")
 
-        if senha == senha_confirmada:
+        usuario = User.objects.filter(email=email).first()
 
-            usuario.set_password(senha_confirmada)
-            usuario.save()
+        if not usuario:
+            messages.error(request, "Usuário não encontrado.")
+            return redirect("rpsenha")
 
-            return redirect("login")
-        
-        else:
+        if senha != senha_confirmada:
             messages.error(request, "As senhas não são iguais!")
+            return render(request, "accounts/novaSenha.html")
+
+        usuario.set_password(senha_confirmada)
+        usuario.save()
+
+        messages.success(request, "Senha alterada com sucesso!")
+        return redirect("login")
 
     return render(request, "accounts/novaSenha.html")
    
