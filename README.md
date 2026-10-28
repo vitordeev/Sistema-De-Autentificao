@@ -4,6 +4,11 @@ Sistema de autenticação desenvolvido com **Python** e **Django**, criado com o
 
 O projeto implementa um fluxo completo de autenticação de usuários, incluindo cadastro, login, logout e recuperação de senha.
 
+<<<<<<< HEAD
+=======
+---
+
+>>>>>>> f258f8c693e2d7f7164f7bcbf1af92b5b514032b
 ## 🚀 Funcionalidades
 
 - Cadastro de usuários
@@ -14,11 +19,21 @@ O projeto implementa um fluxo completo de autenticação de usuários, incluindo
 - Proteção de páginas com autenticação
 - Sistema de mensagens de sucesso e erro
 - Recuperação de senha
+<<<<<<< HEAD
 - Geração de código de verificação
 - Validação do código de recuperação
 - Redefinição de senha
 - Armazenamento de informações adicionais do usuário
 
+=======
+  - Geração de código de verificação
+  - Validação do código de recuperação
+  - Redefinição de senha
+- Armazenamento de informações adicionais do usuário
+
+---
+
+>>>>>>> f258f8c693e2d7f7164f7bcbf1af92b5b514032b
 ## 🛠️ Tecnologias utilizadas
 
 - Python
@@ -29,6 +44,11 @@ O projeto implementa um fluxo completo de autenticação de usuários, incluindo
 - Django ORM
 - Git e GitHub
 
+<<<<<<< HEAD
+=======
+---
+
+>>>>>>> f258f8c693e2d7f7164f7bcbf1af92b5b514032b
 ## 📂 Estrutura do projeto
 
 ```text
@@ -58,6 +78,11 @@ projeto-autenticacao/
 └── README.md
 ```
 
+<<<<<<< HEAD
+=======
+---
+
+>>>>>>> f258f8c693e2d7f7164f7bcbf1af92b5b514032b
 ## ⚙️ Como executar o projeto
 
 ### 1. Clone o repositório
@@ -104,9 +129,15 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+<<<<<<< HEAD
 Depois, acesse:
 
 <http://127.0.0.1:8000/>
+=======
+Depois, acesse: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+---
+>>>>>>> f258f8c693e2d7f7164f7bcbf1af92b5b514032b
 
 ## 🔑 Fluxo de autenticação
 
@@ -138,6 +169,11 @@ Definir nova senha
 Login
 ```
 
+<<<<<<< HEAD
+=======
+---
+
+>>>>>>> f258f8c693e2d7f7164f7bcbf1af92b5b514032b
 ## 📚 Objetivo do projeto
 
 Este projeto foi desenvolvido como parte dos meus estudos em Django e desenvolvimento Full Stack.
@@ -158,14 +194,27 @@ O principal objetivo foi colocar em prática conceitos como:
 - Manipulação de senhas
 - Recuperação de senha
 
+<<<<<<< HEAD
+=======
+---
+
+>>>>>>> f258f8c693e2d7f7164f7bcbf1af92b5b514032b
 ## 👨‍💻 Autor
 
 **Victor Gabriel**
 
 Estudante de Análise e Desenvolvimento de Sistemas, com foco em desenvolvimento Full Stack.
 
+<<<<<<< HEAD
 ## 📌 Status
 
 **Concluído — Projeto de estudo**
+=======
+---
+
+## 📌 Status
+
+✅ **Concluído** — Projeto de estudo
+>>>>>>> f258f8c693e2d7f7164f7bcbf1af92b5b514032b
 
 Novas funcionalidades podem ser adicionadas futuramente conforme o avanço dos estudos em Django.
